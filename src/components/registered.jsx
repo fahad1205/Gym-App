@@ -33,14 +33,25 @@ function Registeration() {
     } else {
       console.log(inputs);
       localStorage.setItem("users", JSON.stringify([...data, inputs]));
+      navigate("/login");
     }
-    navigate("/login");
+   
+  };
+
+  const imageUrl =
+    "https://images.pexels.com/photos/7991660/pexels-photo-7991660.jpeg";
+  const styles = {
+    backgroundImage: `url(${imageUrl})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   };
 
   return (
-    <div>
+    <div style={styles}>
       <form onSubmit={handleSubmit}>
         <Box
+          bgimage="https://images.pexels.com/photos/7991660/pexels-photo-7991660.jpeg"
+          bgcolor="rgb(0,0,0,0.2)"
           display="flex"
           flexDirection="column"
           maxWidth={400}
@@ -53,7 +64,8 @@ function Registeration() {
           boxShadow={"5px 5px 10px #ccc"}
           sx={{
             ":hover": {
-              boxShadow: "10px 10px 40px #ccc",
+              boxShadow: "10px 10px 70px #ccc",
+              backgroundColor: "rgb(0,0,0,0.5)",
             },
           }}
         >
@@ -61,6 +73,8 @@ function Registeration() {
             Sign up
           </Typography>
           <TextField
+            inputProps={{ style: { color: "white" } }}
+            sx={{ bgcolor: "rgba(255,255,255,0.3)" }}
             value={inputs.name}
             onChange={handleChange}
             name="name"
@@ -70,6 +84,8 @@ function Registeration() {
             margin="normal"
           />
           <TextField
+            inputProps={{ style: { color: "white" } }}
+            sx={{ bgcolor: "rgba(255,255,255,0.3)" }}
             value={inputs.email}
             onChange={handleChange}
             name="email"
@@ -79,6 +95,8 @@ function Registeration() {
             margin="normal"
           />
           <TextField
+            inputProps={{ style: { color: "white" } }}
+            sx={{ bgcolor: "rgba(255,255,255,0.3)" }}
             value={inputs.password}
             onChange={handleChange}
             name="password"
