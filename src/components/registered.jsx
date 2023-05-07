@@ -44,13 +44,18 @@ function Registeration() {
     backgroundImage: `url(${imageUrl})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
+    position: "fixed",
+    top: 0,
+    left: 0,
+    height: '100%',
+    width: '100%' ,
   };
 
   return (
     <div style={styles}>
       <form onSubmit={handleSubmit}>
         <Box
-          bgimage="https://images.pexels.com/photos/7991660/pexels-photo-7991660.jpeg"
+          // bgimage="https://images.pexels.com/photos/7991660/pexels-photo-7991660.jpeg"
           bgcolor="rgb(0,0,0,0.2)"
           display="flex"
           flexDirection="column"

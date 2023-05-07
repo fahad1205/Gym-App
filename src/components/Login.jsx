@@ -38,16 +38,29 @@ function LoginPage() {
           alert("invalid details");
         } else {
           alert("login succesfull");
+          navigate("/");
         }
       }
     }
-    navigate("/");
+  };
+  const imageUrl =
+    "https://images.pexels.com/photos/7991660/pexels-photo-7991660.jpeg";
+  const styles = {
+    backgroundImage: `url(${imageUrl})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    position: "fixed",
+    top: 0,
+    left: 0,
+    height: '100%',
+    width: '100%' ,
   };
 
   return (
-    <div>
+    <div style={styles}>
       <form onSubmit={handleSubmit}>
         <Box
+          bgcolor="rgb(0,0,0,0.2)"
           display="flex"
           flexDirection="column"
           maxWidth={400}
@@ -69,6 +82,8 @@ function LoginPage() {
           </Typography>
 
           <TextField
+            inputProps={{ style: { color: "white" } }}
+            sx={{ bgcolor: "rgba(255,255,255,0.3)" }}
             value={inputs.email}
             onChange={handleChange}
             name="email"
@@ -78,6 +93,8 @@ function LoginPage() {
             margin="normal"
           />
           <TextField
+            inputProps={{ style: { color: "white" } }}
+            sx={{ bgcolor: "rgba(255,255,255,0.3)" }}
             value={inputs.password}
             onChange={handleChange}
             name="password"
